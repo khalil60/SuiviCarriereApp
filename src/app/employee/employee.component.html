@@ -1,0 +1,43 @@
+<div class="container" *ngIf="employee">
+  <fieldset class="form-group">
+    <label> Lastname :</label>
+    <input type="text"  [(ngModel)]="employee.lastname"  class="form-control" name="lastname" required="required" >
+  </fieldset>
+
+  <fieldset class="form-group">
+    <label> firstname :</label>
+    <input type="text"  [(ngModel)]="employee.firstname"  class="form-control" name="firstname" required="required" >
+  </fieldset>
+  <fieldset class="form-group">
+    <label> Email:</label>
+    <input type="text"  [(ngModel)]="employee.email"  class="form-control" name="email" required="required" >
+  </fieldset>
+  <fieldset class="form-group">
+    <label> date Embauche :</label>
+    <input type="date"  [ngModel]="employee.dateEmbauche" #dateEmbauche="ngModel"
+           (ngModelChange)="employee.dateEmbauche=$event" class="form-control" name="dateEmbauche" required="required">
+  </fieldset>
+
+  <fieldset class="form-group">
+    <label> Date diplome  :</label>
+    <input type="date"  [ngModel]="employee.dateDiplome" #dateDiplome="ngModel"
+           (ngModelChange)="employee.dateDiplome=$event" class="form-control" name="dateDiplome" required="required" >
+  </fieldset>
+
+  <div class="form-group">
+    <label for="comment">Projet Professionnel:</label>
+    <textarea class="form-control" rows="10" id="comment" name="comment"  [(ngModel)]="employee.objectifProfessionel"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="comment">Commentaires:</label>
+    <textarea class="form-control" rows="5" id="comment" data-length = "120"></textarea>
+  </div>
+  <h4>Upload and Download File</h4>
+  <input type="file" id="customFile" (change)="selectFile($event)">
+  <button class="btn btn-primary" [disabled]="!selectedFiles || admincheck || status" (click)="upload()">Save File</button>
+  <button class="btn btn-primary" style="margin-left: 10px" (click)="downloadFile()">View File</button>
+  <div class="container">
+  <button class="btn btn-success" (click)="saveEmployee()">save</button>
+  </div>
+</div>

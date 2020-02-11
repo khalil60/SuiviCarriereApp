@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="alert alert-success" *ngIf="message" >{{message}}</div>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Liste des salariés</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row" >
+      <button (click)="addEmployee()" class="btn btn-info" style="margin-left: 10px">Ajouter un salarié</button>
+    </div>
+    <Br>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Date Embauche</th>
+        <th>Experience</th>
+        <th>Gestion des salarié(es)</th>
+      </tr>
+      </thead>
+      <tbody *ngIf="employees">
+      <tr *ngFor="let employee of employees._embedded.employees">
+        <td>{{employee.firstname}}</td>
+        <td>{{employee.lastname}}</td>
+        <td>{{employee.email}}</td>
+        <td>{{employee.dateEmbauche | date: 'dd/MM/yyyy'}}</td>
+        <td>{{employee.experience}}</td>
+        <td><button (click)="deleteEmployee(employee.id)" class="btn btn-danger">Delete</button>
+          <button (click)="updateEmployee(employee.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+          <button (click)="employeeDetails(employee.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
