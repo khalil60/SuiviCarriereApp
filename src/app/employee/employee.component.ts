@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ListEmployeeDataService} from '../service/data/list-employee-data.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Employee} from '../employee-list/employee-list.component';
+import {HttpResponse} from '@angular/common/http';
+//import {HttpEventType, HttpResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-employee',
@@ -12,9 +14,13 @@ export class EmployeeComponent implements OnInit {
   id: number;
   employee: any;
   selectedFiles: FileList;
-  admincheck: boolean;
-  status: boolean;
-
+  //admincheck: boolean;
+  //status: boolean;
+  //filemodel: any;
+  currentFileUpload: File;
+  progress: { percentage: number } = { percentage: 0 };
+  //selectedFile = null;
+ // changeImage = false;
   constructor(private listEmployeeService: ListEmployeeDataService,
               private activeRoute: ActivatedRoute, private router: Router) {
   }
@@ -45,13 +51,24 @@ export class EmployeeComponent implements OnInit {
     }
   }
 
-  selectFile($event: Event) {
 
+  selectFile(event) {
+    this.selectedFiles = event.target.files;
   }
 
 
-
   upload() {
+    //this.progress.percentage = 0;
+    this.currentFileUpload = this.selectedFiles.item(0);
+    //this.listEmployeeService.uploadCV(this.filemodel).subscribe(data=>{
+      //console.log(data)
+      this.listEmployeeService.uploadCV(this.currentFileUpload).subscribe(data=>{
+        console.log(data)
+        if (data instanceof HttpResponse) {
+          console.log('File is completely uploaded!');
+        }
+    });
+    this.selectedFiles = undefined;
 
   }
 

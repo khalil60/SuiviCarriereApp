@@ -3,7 +3,7 @@ import {ListEmployeeDataService} from '../service/data/list-employee-data.servic
 import {Router} from '@angular/router';
 
 export class Employee {
-  constructor(id: number,
+  constructor( id: number,
               firstName: string,
               lastName: string,
               deteEmbauche: Date
@@ -49,9 +49,9 @@ export class EmployeeListComponent implements OnInit {
 
   }
 
-  employeeDetails(id: any) {
-    this.router.navigate(['employee-detail',id])
-
+  employeeDetails(id:any) {
+    this.router.navigate(['employee-detail/infos-generales',id ])
+    //this.router.navigate(['comments'],id)
   }
 
 

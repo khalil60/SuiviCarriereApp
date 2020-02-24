@@ -1,44 +1,11 @@
-<p></p>
-
-<!--<div class="container">
-  <div class="panel panel-primary">
-    <div class="panel-heading">About</div>
-    <div class="panel-body">
-
-    </div>
-  </div>
-</div>-->
 
 
-<!--<div class="card ext-white bg-primary mb-3" style="max-width: 45rem;">
- <div class="card card-header"><strong>ABOUT</strong></div>
- <div class="card card-body" *ngIf="employee">
-   <h3> Infos salarié(es)</h3>-->
+<app-menu-details></app-menu-details>
 
-   <app-menu-details></app-menu-details>
- <!-- <ul class="list-group" *ngFor="let employe of employee._embedded.employees">
-     <li class="list-group-item">Lastename : {{employe.lastname}}</li>
-     <li class="list-group-item">Firstname : {{employe.firstname}}</li>
-     <li class="list-group-item">Date Embauche : {{employe.dateEmbauche}}</li>
-   </ul>-->
-  <div *ngIf="employee">
-    <div>
-       <label><b>First Name: </b></label> {{employee.firstname}}
-     </div>
-     <div>
-       <label><b>Last Name: </b></label> {{employee.lastname}}
-     </div>
-     <div>
-       <label><b>Email Id: </b></label> {{employee.email}}
-     </div>
-     <div>
-       <label><b>Date Embauche: </b></label> {{employee.dateEmbauche | date: 'dd/MM/yyyy'}}
-     </div>
-    <div>
-      <label><b>Date diplome: </b></label> {{employee.dateDiplome | date: 'dd/MM/yyyy'}}
-    </div>
-    <div>
-      <label ><b>Objectif Professsionnel: </b></label> {{employee.objectifProfessionel}}
-    </div>
-  </div>
+<router-outlet></router-outlet>
+
+
+
+
+
 

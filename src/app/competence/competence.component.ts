@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Route} from '@angular/router';
 
 @Component({
   selector: 'app-competence',
@@ -8,11 +8,18 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class CompetenceComponent implements OnInit {
 
+  tribu : String [] = ['Business Inteligence/Big Data',"Developpement",'fonctionnel']
+
   id:number;
-  constructor(private route:ActivatedRoute) { }
+  constructor(private activedRoute:ActivatedRoute) { }
 
   ngOnInit() {
-    this.id =this.route.snapshot.params['id']
+    this.id =this.activedRoute.snapshot.params['id']
   }
 
+  AddSkils() {
+
+    //this.router.
+
+  }
 }

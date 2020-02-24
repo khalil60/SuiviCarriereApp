@@ -9,24 +9,24 @@ import {Employee} from '../employee-list/employee-list.component';
   styleUrls: ['./employee-details.component.css']
 })
 export class EmployeeDetailsComponent implements OnInit {
-  employee: any;
-   id: number;
+  // employee: any;
+   //id: number;
 
   constructor(private listEmployeeService:ListEmployeeDataService,private router:Router,
               private  route:ActivatedRoute) { }
 
   ngOnInit() {
-    this.id = this.route.snapshot.params['id'];
-    this.listEmployeeService.getEmployee(this.id)
-      .subscribe(data => {
-        console.log(data)
-        this.employee = data;
-      }, error => console.log(error));
-  }
+    //this.id = this.route.snapshot.params['id'];
+    //this.listEmployeeService.getEmployee(this.id)
+    //  .subscribe(data => {
+      ///  console.log(data)
+      //  this.employee = data;
+   // }, error => console.log(error));
+  //}
 
-  list(){
-    this.router.navigate(['employees']);
-  }
+  //list(){
+    //this.router.navigate(['employees']);
+    }
 
 }
 

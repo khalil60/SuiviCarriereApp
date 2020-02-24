@@ -31,7 +31,12 @@ export class ListEmployeeDataService {
     return this.http.post(`http://localhost:8080/employees`,employee)
   }
 
-   getEmployee(id){
+   getEmployee(id:any){
     return this.http.get(`http://localhost:8080/employees/${id}`)
    }
+
+   uploadCV(filemodel){
+    return this.http.post(`http://localhost:8080/upload`,filemodel)
+   }
+
 }

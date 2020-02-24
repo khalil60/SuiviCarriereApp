@@ -1,4 +1,6 @@
 <div class="container" *ngIf="employee">
+  <div class="card">
+    <div class="card-body">
   <fieldset class="form-group">
     <label> Lastname :</label>
     <input type="text"  [(ngModel)]="employee.lastname"  class="form-control" name="lastname" required="required" >
@@ -34,10 +36,15 @@
     <textarea class="form-control" rows="5" id="comment" data-length = "120"></textarea>
   </div>
   <h4>Upload and Download File</h4>
-  <input type="file" id="customFile" (change)="selectFile($event)">
-  <button class="btn btn-primary" [disabled]="!selectedFiles || admincheck || status" (click)="upload()">Save File</button>
-  <button class="btn btn-primary" style="margin-left: 10px" (click)="downloadFile()">View File</button>
-  <div class="container">
+  <div style="text-align:center">
+  <label>
+    <input type="file" (change)="selectFile($event)">
+  </label>
+  <button [disabled]="!selectedFiles"
+          (click)="upload()">Upload</button>
+</div>
+
   <button class="btn btn-success" (click)="saveEmployee()">save</button>
   </div>
+</div>
 </div>

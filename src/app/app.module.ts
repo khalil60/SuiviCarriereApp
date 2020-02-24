@@ -7,7 +7,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -16,6 +16,9 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { MenuDetailsComponent } from './menu-details/menu-details.component';
 import { SuiviComponent } from './suivi/suivi.component';
 import { CompetenceComponent } from './competence/competence.component';
+import { InfosGeneralesComponent } from './infos-generales/infos-generales.component';
+import { CommentsComponent } from './comments/comments.component';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { CompetenceComponent } from './competence/competence.component';
     MenuDetailsComponent,
     SuiviComponent,
     CompetenceComponent,
+    InfosGeneralesComponent,
+    CommentsComponent,
+
 
 
   ],
@@ -38,7 +44,8 @@ import { CompetenceComponent } from './competence/competence.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

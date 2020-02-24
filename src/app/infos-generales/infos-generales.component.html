@@ -1,0 +1,26 @@
+<br>
+<br>
+<br>
+
+<div *ngIf="employee">
+  <div>
+    <label><b>First Name: </b></label> {{employee.firstname}}
+  </div>
+  <div>
+    <label><b>Last Name: </b></label> {{employee.lastname}}
+  </div>
+  <div>
+    <label><b>Email Id: </b></label> {{employee.emailId}}
+  </div>
+  <div>
+    <label><b>Date Embauche: </b></label> {{employee.dateEmbauche | date: 'dd/MM/yyyy'}}
+  </div>
+  <div>
+    <label><b>Date diplome: </b></label> {{employee.dateDiplome | date: 'dd/MM/yyyy'}}
+  </div>
+  <div>
+    <label ><b>Objectif Professsionnel: </b></label> {{employee.objectifProfessionel}}
+  </div>
+</div>
+
+

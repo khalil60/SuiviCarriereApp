@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Commentaire} from '../../Commentaire';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,11 @@ export class CommentaireDataService {
     return this.http.get(`http://localhost:8080/commentaires/${id}`)
   }
 
-  getAllCommentaires(){
+  getAllComments(){
     return this.http.get('http://localhost:8080/commentaires')
+  }
+
+  saveComment(comment:Commentaire){
+    return this.http.post('http://localhost:8080/commentaires',comment)
   }
 }

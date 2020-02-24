@@ -1,0 +1,28 @@
+<br>
+<br>
+<br>
+
+<div class="container"> <div class="card ">
+<div class="card card-header">Commentaires</div>
+<div class="card-body"> <ul class="">
+  <div class="form-group">
+    <textarea class="form-control" rows="5" id="comment" [(ngModel)]="comment.texte" maxlength="1000"></textarea>
+    <button (click)="ajoutComments()" [disabled]="comment.texte==''" class="btn btn-primary">Add comment</button>
+  </div>
+
+  <div>
+  <h3>Liste des messages :</h3>
+  <ul class="list-group" *ngIf="commentaires" >
+  <li *ngFor="let c of commentaires._embedded.commentaires" class="list-group-item">
+    {{c.texte}}<span class="badge badge-pill badge-primary float-lg-right"  >{{c.dateCommentaire|date:'dd-MM-yyyy:HH:mm:ss'}}</span></li>
+</ul>
+</div>
+
+  <ng-template #noComments>
+  <p> Liste des commentaires est vide</p> </ng-template>
+</ul>
+  </div>
+</div>
+</div>
+
+
